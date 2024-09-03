@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html
+  data-navigation-type="default"
+  data-navbar-horizontal-shape="default"
+  lang="en-US"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Students</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicons/favicon.ico"
+    />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/img/favicons/mstile-150x150.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="vendors/simplebar/simplebar.min.js"></script>
+    <script src="assets/js/config.js"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="vendors/simplebar/simplebar.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      href="assets/css/theme-rtl.min.css"
+      type="text/css"
+      rel="stylesheet"
+      id="style-rtl"
+    />
+    <link
+      href="assets/css/theme.min.css"
+      type="text/css"
+      rel="stylesheet"
+      id="style-default"
+    />
+    <link
+      href="assets/css/user-rtl.min.css"
+      type="text/css"
+      rel="stylesheet"
+      id="user-style-rtl"
+    />
+    <link
+      href="assets/css/user.min.css"
+      type="text/css"
+      rel="stylesheet"
+      id="user-style-default"
+    />
+    <script>
+      var phoenixIsRTL = window.config.config.phoenixIsRTL;
+      if (phoenixIsRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+    <link href="vendors/leaflet/leaflet.css" rel="stylesheet" />
+    <link
+      href="vendors/leaflet.markercluster/MarkerCluster.css"
+      rel="stylesheet"
+    />
+    <link
+      href="vendors/leaflet.markercluster/MarkerCluster.Default.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-vertical navbar-expand-lg">
+        <script>
+          var navbarStyle = window.config.config.phoenixNavbarStyle;
+          if (navbarStyle && navbarStyle !== 'transparent') {
+            document
+              .querySelector('body')
+              .classList.add(`navbar-${navbarStyle}`);
+          }
+        </script>
+        <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
+          <!-- scrollbar removed-->
+          <div class="navbar-vertical-content">
+            <ul class="navbar-nav flex-column" id="navbarVerticalNav">
+              <li class="nav-item">
+                <!-- Home -->
+                <div class="nav-item-wrapper">
+                  <a class="nav-link label-1" role="button">
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><i class="fas fa-home"></i
+                      ></span>
+                      <span class="nav-link-text-wrapper"
+                        ><span class="nav-link-text">Home</span></span
+                      >
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Students -->
+                <div class="nav-item-wrapper">
+                  <a
+                    class="nav-link dropdown-indicator label-1"
+                    href="#nv-Student"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="nv-Student"
+                  >
+                    <div class="d-flex align-items-center">
+                      <div class="dropdown-indicator-icon">
+                        <span class="fas fa-caret-right"></span>
+                      </div>
+                      <span class="nav-link-icon"
+                        ><i class="fas fa-user-graduate"></i
+                      ></span>
+                      <span class="nav-link-text">Students</span>
+                      <span
+                        class="fa-solid fa-circle text-info ms-1 new-page-indicator"
+                        style="font-size: 6px"
+                      ></span>
+                    </div>
+                  </a>
+                  <div class="parent-wrapper label-1">
+                    <ul
+                      class="nav collapse parent"
+                      data-bs-parent="#navbarVerticalCollapse"
+                      id="nv-Student"
+                    >
+                      <li class="nav-item">
+                        <a
+                          class="nav-link"
+                          href="/"
+                          data-bs-toggle=""
+                          aria-expanded="false"
+                        >
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Students</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="nav-link"
+                          data-bs-toggle=""
+                          aria-expanded="false"
+                        >
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Add Student</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Classes -->
+                <div class="nav-item-wrapper">
+                  <a class="nav-link label-1" role="button">
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><i class="fas fa-chalkboard-teacher"></i
+                      ></span>
+                      <span class="nav-link-text">Classes</span>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Grades -->
+                <div class="nav-item-wrapper">
+                  <a class="nav-link label-1" role="button">
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><i class="fas fa-chart-line"></i
+                      ></span>
+                      <span class="nav-link-text">Grades</span>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Reports -->
+                <div class="nav-item-wrapper">
+                  <a class="nav-link label-1" role="button">
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><i class="fas fa-file-alt"></i
+                      ></span>
+                      <span class="nav-link-text">Reports</span>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="navbar-vertical-footer">
+          <button
+            class="btn navbar-vertical-toggle border-0 fw-semibold w-100 white-space-nowrap d-flex align-items-center"
+          >
+            <span class="uil uil-left-arrow-to-left fs-8"></span
+            ><span class="uil uil-arrow-from-right fs-8"></span
+            ><span class="navbar-vertical-footer-text ms-2"
+              >Collapsed View</span
+            >
+          </button>
+        </div>
+      </nav>
+      <nav
+        class="navbar navbar-top fixed-top navbar-expand-lg"
+        id="navbarCombo"
+        data-navbar-top="combo"
+        data-move-target="#navbarVerticalNav"
+        style="display: none"
+      >
+        <div class="navbar-logo">
+          <button
+            class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarVerticalCollapse"
+            aria-controls="navbarVerticalCollapse"
+            aria-expanded="false"
+            aria-label="Toggle Navigation"
+          >
+            <span class="navbar-toggle-icon"
+              ><span class="toggle-line"></span
+            ></span>
+          </button>
+          <a class="navbar-brand me-1 me-sm-3" href="index.html">
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center">
+                <img
+                  src="assets/img/logo.png"
+                  alt="Students"
+                  width="35"
+                />
+                <p class="logo-text ms-2 d-none d-sm-block text-dark fw-bold">Demo</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="collapse navbar-collapse navbar-top-collapse order-1 order-lg-0 justify-content-center"
+          id="navbarTopCollapse"
+        >
+          <ul class="navbar-nav navbar-nav-top">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle lh-1"
+                role="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-haspopup="true"
+                aria-expanded="false"
+                ><span class="uil fs-8 me-2 uil-chart-pie"></span>Home</a
+              >
+            </li>
+            <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle lh-1" role="button"><span class="uil fs-8 me-2 uil-cube"></span>Apps</a>              
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle lh-1" role="button"
+                ><span class="uil fs-8 me-2 uil-files-landscapes-alt"></span
+                >Pages</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle lh-1" role="button"
+                ><span class="uil fs-8 me-2 uil-puzzle-piece"></span>Help</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle lh-1" role="button"
+                ><span class="uil fs-8 me-2 uil-document-layout-right"></span
+                >Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav navbar-nav-icons flex-row">
+          <li class="nav-item">
+            <div class="theme-control-toggle fa-icon-wait px-2">
+              <input
+                class="form-check-input ms-0 theme-control-toggle-input"
+                type="checkbox"
+                data-theme-control="phoenixTheme"
+                value="dark"
+                id="themeControlToggle"
+              />
+              <label
+                class="mb-0 theme-control-toggle-label theme-control-toggle-light"
+                for="themeControlToggle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="Switch theme"
+                ><span class="icon" data-feather="moon"></span
+              ></label>
+              <label
+                class="mb-0 theme-control-toggle-label theme-control-toggle-dark"
+                for="themeControlToggle"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="Switch theme"
+                ><span class="icon" data-feather="sun"></span
+              ></label>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#searchBoxModal"
+              ><span
+                data-feather="search"
+                style="height: 19px; width: 19px; margin-bottom: 2px"
+              ></span
+            ></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link"
+              href="#"
+              style="min-width: 2.25rem"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              data-bs-auto-close="outside"
+              ><span
+                data-feather="bell"
+                style="height: 20px; width: 20px"
+              ></span
+            ></a>
+
+            <div
+              class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
+              id="navbarDropdownNotfication"
+              aria-labelledby="navbarDropdownNotfication"
+            >
+              <div class="card position-relative border-0">
+                <div class="card-header p-2">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="text-body-emphasis mb-0">Notificatons</h5>
+                    <button
+                      class="btn btn-link p-0 fs-9 fw-normal"
+                      type="button"
+                    >
+                      Mark all as read
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="scrollbar-overlay" style="height: 27rem">
+                    <div
+                      class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom"
+                    >
+                      <div
+                        class="d-flex align-items-center justify-content-between position-relative"
+                      >
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <img
+                              class="rounded-circle"
+                              src="assets/img/team/40x40/30.webp"
+                              alt=""
+                            />
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">
+                              Jessie Samson
+                            </h4>
+                            <p
+                              class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
+                            >
+                              <span class="me-1 fs-10">💬</span>Application For
+                              Sick Leave<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
+                                >10m</span
+                              >
+                            </p>
+                            <p class="text-body-secondary fs-9 mb-0">
+                              <span class="me-1 fas fa-clock"></span
+                              ><span class="fw-bold">08:41 AM </span>September
+                              3,2021
+                            </p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block">
+                          <button
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            data-boundary="window"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-bs-reference="parent"
+                          >
+                            <span
+                              class="fas fa-ellipsis-h fs-10 text-body"
+                            ></span>
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-end py-2">
+                            <a class="dropdown-item" class="text-primary"
+                              >Mark as unread</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="card-footer p-0 border-top border-translucent border-0"
+                >
+                  <div
+                    class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85"
+                  >
+                    <a class="fw-bolder">Notification history</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link lh-1 pe-0"
+              id="navbarDropdownUser"
+              class="text-primary"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <div class="avatar avatar-l">
+                <img
+                  class="rounded-circle"
+                  src="assets/img/team/40x40/65.webp"
+                  alt=""
+                />
+              </div>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border"
+              aria-labelledby="navbarDropdownUser"
+            >
+              <div class="card position-relative border-0">
+                <div class="card-body p-0">
+                  <div class="text-center pt-4 pb-3">
+                    <div class="avatar avatar-xl">
+                      <img
+                        class="rounded-circle"
+                        src="assets/img/team/40x40/65.webp"
+                        alt=""
+                      />
+                    </div>
+                    <h6 class="mt-2 text-body-emphasis">Jerry Seinfield</h6>
+                  </div>
+                </div>
+                <div class="overflow-auto scrollbar" style="height: 5rem">
+                  <ul class="nav d-flex flex-column mb-2 pb-1">
+                    <li class="nav-item">
+                      <a class="nav-link px-3" class="text-primary">
+                        <span class="me-2 text-body" data-feather="user"></span
+                        ><span>Profile</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link px-3" class="text-primary">
+                        <span
+                          class="me-2 text-body"
+                          data-feather="settings"
+                        ></span
+                        >Settings &amp; Privacy
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer p-0 border-top border-translucent">
+                  <div class="px-3">
+                    <a
+                      class="btn btn-phoenix-secondary d-flex flex-center w-100 my-3"
+                      class="text-primary"
+                    >
+                      <span class="me-2" data-feather="log-out"> </span>Sign
+                      out</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <script>
+        var navbarTopShape = window.config.config.phoenixNavbarTopShape;
+        var navbarPosition = window.config.config.phoenixNavbarPosition;
+
+        var body = document.querySelector('body');
+        var navbarDefault = document.querySelector('#navbarDefault');
+        var navbarTopNew = document.querySelector('#navbarTopNew');
+        var navbarSlim = document.querySelector('#navbarSlim');
+        var navbarTopSlimNew = document.querySelector('#navbarTopSlimNew');
+        var navbarCombo = document.querySelector('#navbarCombo');
+
+        var documentElement = document.documentElement;
+        var navbarVertical = document.querySelector('.navbar-vertical');
+        navbarCombo.removeAttribute('style');
+        navbarVertical.removeAttribute('style');
+        documentElement.setAttribute('data-navigation-type', 'combo');
+      </script>
+      <div
+        class="modal fade"
+        id="searchBoxModal"
+        tabindex="-1"
+        aria-hidden="true"
+        data-bs-backdrop="true"
+        data-phoenix-modal="data-phoenix-modal"
+        style="--phoenix-backdrop-opacity: 1"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content mt-15 rounded-pill">
+            <div class="modal-body p-0">
+              <div
+                class="search-box navbar-top-search-box"
+                data-list='{"valueNames":["title"]}'
+                style="width: auto"
+              >
+                <form
+                  class="position-relative"
+                  data-bs-toggle="search"
+                  data-bs-display="static"
+                >
+                  <input
+                    class="form-control search-input fuzzy-search rounded-pill form-control-lg"
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search"
+                  />
+                  <span class="fas fa-search search-box-icon"></span>
+                </form>
+                <div
+                  class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none"
+                  data-bs-dismiss="search"
+                >
+                  <button class="btn btn-link p-0" aria-label="Close"></button>
+                </div>
+                <div
+                  class="dropdown-menu border start-0 py-0 overflow-hidden w-100"
+                >
+                  <div class="scrollbar-overlay" style="max-height: 30rem">
+                    <div class="list pb-3">
+                      <h6
+                        class="dropdown-header text-body-highlight fs-9 border-bottom border-translucent py-2 lh-sm"
+                      >
+                        Recently Searched
+                      </h6>
+                      <div class="py-2">
+                        <a class="dropdown-item">
+                          <div class="d-flex align-items-center">
+                            <div class="fw-normal text-body-highlight title">
+                              <span
+                                class="fa-solid fa-clock-rotate-left"
+                                data-fa-transform="shrink-2"
+                              ></span>
+                              Reports
+                            </div>
+                          </div>
+                        </a>
+                        <a class="dropdown-item">
+                          <div class="d-flex align-items-center">
+                            <div class="fw-normal text-body-highlight title">
+                              <span
+                                class="fa-solid fa-clock-rotate-left"
+                                data-fa-transform="shrink-2"
+                              ></span>
+                              Pending Fees
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <p class="fallback fw-bold fs-7 d-none">
+                        No Result Found.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <nav class="mb-2" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a class="text-primary">Home</a></li>
+            <li class="breadcrumb-item active">Students</li>
+          </ol>
+        </nav>
+        <div class="mb-9">
+          <div class="row g-2 mb-4">
+            <div class="col-auto">
+              <h2 class="mb-0">Students</h2>
+            </div>
+          </div>
+          <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                ><span>All </span
+                ><span class="text-body-tertiary fw-semibold">(20)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span>Pass </span
+                ><span class="text-body-tertiary fw-semibold">(18)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span>Fail</span
+                ><span class="text-body-tertiary fw-semibold">(2)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span>Fees Due</span
+                ><span class="text-body-tertiary fw-semibold">(1)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><span>Fees Credited</span
+                ><span class="text-body-tertiary fw-semibold">(19)</span></a
+              >
+            </li>
+          </ul>
+          <div
+            id="products"
+            data-list='{"valueNames":["student","email","total-orders","total-spent","city","last-seen","last-order"],"page":10,"pagination":true}'
+          >
+            <div class="mb-4">
+              <div class="row g-3">
+                <div class="col-auto">
+                  <div class="search-box">
+                    <form class="position-relative">
+                      <input
+                        class="form-control search-input search"
+                        type="search"
+                        placeholder="Search students"
+                        aria-label="Search"
+                      />
+                      <span class="fas fa-search search-box-icon"></span>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-auto scrollbar overflow-hidden-y flex-grow-1">
+                  <div class="btn-group position-static" role="group">
+                    <div class="btn-group position-static text-nowrap">
+                      <button
+                        class="btn btn-phoenix-secondary px-7 flex-shrink-0"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        data-boundary="window"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        data-bs-reference="parent"
+                      >
+                        States<span class="fas fa-angle-down ms-2"></span>
+                      </button>
+                      <ul class="dropdown-menu" style="max-height: 300px; overflow-y: auto;">
+                        <li><a class="dropdown-item" href="#">Alabama</a></li>
+                        <li><a class="dropdown-item" href="#">Alaska</a></li>
+                        <li><a class="dropdown-item" href="#">Arizona</a></li>
+                        <li><a class="dropdown-item" href="#">Arkansas</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">California</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Colorado</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Connecticut</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Delaware</a></li>
+                        <li><a class="dropdown-item" href="#">Florida</a></li>
+                        <li><a class="dropdown-item" href="#">Georgia</a></li>
+                        <li><a class="dropdown-item" href="#">Hawaii</a></li>
+                        <li><a class="dropdown-item" href="#">Idaho</a></li>
+                        <li><a class="dropdown-item" href="#">Illinois</a></li>
+                        <li><a class="dropdown-item" href="#">Indiana</a></li>
+                        <li><a class="dropdown-item" href="#">Iowa</a></li>
+                        <li><a class="dropdown-item" href="#">Kansas</a></li>
+                        <li><a class="dropdown-item" href="#">Kentucky</a></li>
+                        <li><a class="dropdown-item" href="#">Louisiana</a></li>
+                        <li><a class="dropdown-item" href="#">Maine</a></li>
+                        <li><a class="dropdown-item" href="#">Maryland</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Massachusetts</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Michigan</a></li>
+                        <li><a class="dropdown-item" href="#">Minnesota</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Mississippi</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Missouri</a></li>
+                        <li><a class="dropdown-item" href="#">Montana</a></li>
+                        <li><a class="dropdown-item" href="#">Nebraska</a></li>
+                        <li><a class="dropdown-item" href="#">Nevada</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">New Hampshire</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">New Jersey</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">New Mexico</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">New York</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">North Carolina</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">North Dakota</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Ohio</a></li>
+                        <li><a class="dropdown-item" href="#">Oklahoma</a></li>
+                        <li><a class="dropdown-item" href="#">Oregon</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Pennsylvania</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Rhode Island</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">South Carolina</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">South Dakota</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Tennessee</a></li>
+                        <li><a class="dropdown-item" href="#">Texas</a></li>
+                        <li><a class="dropdown-item" href="#">Utah</a></li>
+                        <li><a class="dropdown-item" href="#">Vermont</a></li>
+                        <li><a class="dropdown-item" href="#">Virginia</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Washington</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">West Virginia</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Wisconsin</a></li>
+                        <li><a class="dropdown-item" href="#">Wyoming</a></li>
+                      </ul>
+                    </div>
+                    <button
+                      class="btn btn-phoenix-secondary px-7 flex-shrink-0"
+                    >
+                      More filters
+                    </button>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-link text-body me-4 px-0">
+                    <span class="fa-solid fa-file-export fs-9 me-2"></span
+                    >Export
+                  </button>
+                  <button id="add-student" class="btn btn-primary">
+                    <span class="fas fa-plus me-2"></span>Add student
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1"
+            >
+              <div class="table-responsive scrollbar-overlay mx-n1 px-1">
+                <table class="table table-sm fs-9 mb-0">
+                  <thead>
+                    <tr>
+                      <th
+                        class="white-space-nowrap fs-9 align-middle ps-0 text-uppercase"
+                      >
+                        <div class="form-check mb-0 fs-8">
+                          <input
+                            class="form-check-input"
+                            id="checkbox-bulk-students-select"
+                            type="checkbox"
+                            data-bulk-select='{"body":"students-table-body"}'
+                          />
+                        </div>
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase"
+                        scope="col"
+                        data-sort="student"
+                        style="width: 10%"
+                      >
+                        Roll No.
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase text-center pe-5"
+                        scope="col"
+                        data-sort="student"
+                        style="width: 10%"
+                      >
+                        Student
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase text-center"
+                        scope="col"
+                        data-sort="age"
+                        style="width: 10%"
+                      >
+                        Age
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase text-center"
+                        scope="col"
+                        data-sort="gender"
+                        style="width: 10%"
+                      >
+                        Gender
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase ps-7"
+                        scope="col"
+                        data-sort="address"
+                        style="width: 25%"
+                      >
+                        Address
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase pe-5"
+                        scope="col"
+                        data-sort="email"
+                        style="width: 20%"
+                      >
+                        Email
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase text-end"
+                        scope="col"
+                        data-sort="phone"
+                        style="width: 15%"
+                      >
+                        Phone
+                      </th>
+                      <th
+                        class="sort align-middle text-uppercase text-end pe-0"
+                        scope="col"
+                        data-sort="actions"
+                        style="width: 10%; min-width: 150px"
+                      >
+                        Actions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="list" id="students-table-body">
+                    <!-- <tr class="hover-actions-trigger btn-reveal-trigger position-static">
+                      <td class="fs-9 align-middle ps-0 py-3">
+                        <div class="form-check mb-0 fs-8">
+                          <input class="form-check-input" type="checkbox" data-bulk-select-row='{"student":{"avatar":"/team/32.webp","name":"Carry Anna"},"email":"annac34@gmail.com","city":"Budapest","totalOrders":89,"totalSpent":23987,"lastSeen":"34 min ago","lastOrder":"Dec 12, 12:56 PM"}' />
+                        </div>
+                      </td>
+                      <td class="student align-middle white-space-nowrap pe-5"><a class="d-flex align-items-center text-body-emphasis" href="#">
+                          <div class="avatar avatar-m"><img class="rounded-circle" src="https://fakeimg.pl/500x500/cc6600" alt="" />
+                          </div>
+                          <p class="mb-0 ms-3 text-body-emphasis fw-bold">Carry Anna</p>
+                        </a>
+                      </td>
+                      <td class="total-spent align-middle white-space-nowrap fw-bold text-center text-body-emphasis">28</td>
+                      <td class="total-orders align-middle white-space-nowrap fw-semibold text-center text-body-highlight">Male</td>
+                      <td class="city align-middle white-space-nowrap text-body-highlight ps-7">123 Main Street, Cityville, 12345, USA</td>
+                      <td class="email align-middle white-space-nowrap pe-5"><a class="fw-semibold" href="mailto:annac34@gmail.com">annac34@gmail.com</a></td>
+                      <td class="last-seen align-middle white-space-nowrap text-body-tertiary text-end">555-123-4567</td>                      
+                      <td class="align-middle white-space-nowrap text-end pe-0 ps-4">
+                        <div class="btn-reveal-trigger position-static">
+                          <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" class="text-primary">View</a><a class="dropdown-item" class="text-primary">Export</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" class="text-primary">Remove</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>                     -->
+                  </tbody>
+                </table>
+              </div>
+              <div
+                class="row align-items-center justify-content-between py-2 pe-0 fs-9"
+              >
+                <div class="col-auto d-flex">
+                  <p
+                    class="mb-0 d-none d-sm-block me-3 fw-semibold text-body"
+                    data-list-info="data-list-info"
+                  ></p>
+                  <a class="fw-semibold" class="text-primary" data-list-view="*"
+                    >View all<span
+                      class="fas fa-angle-right ms-1"
+                      data-fa-transform="down-1"
+                    ></span></a
+                  ><a
+                    class="fw-semibold d-none"
+                    class="text-primary"
+                    data-list-view="less"
+                    >View Less<span
+                      class="fas fa-angle-right ms-1"
+                      data-fa-transform="down-1"
+                    ></span
+                  ></a>
+                </div>
+                <div class="col-auto d-flex">
+                  <button class="page-link" data-list-pagination="prev">
+                    <span class="fas fa-chevron-left"></span>
+                  </button>
+                  <ul class="mb-0 pagination"></ul>
+                  <button class="page-link pe-0" data-list-pagination="next">
+                    <span class="fas fa-chevron-right"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer position-absolute">
+          <div class="row g-0 justify-content-end align-items-center h-100">
+            <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 mt-2 mt-sm-0 text-body fs-9">
+                Developed By
+                <span class="d-none d-sm-inline-block"
+                  ><a class="mx-1" target="_blank" href="https://www.linkedin.com/in/khushwinder11/">Khushwinder</a></span
+                ><span class="d-none d-sm-inline-block mx-1">|</span
+                ><br class="d-sm-none" />&copy; 2024
+              </p>
+            </div>
+            <!-- <div class="col-12 col-sm-auto text-center">
+              <p class="mb-0 text-body-tertiary text-opacity-85"></p>
+            </div> -->
+          </div>
+        </footer>
+
+        <!-- Modal -->
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="studentModal"
+          tabindex="-1"
+          aria-labelledby="studentModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title">
+                  Roll Number <span id="rollNum"></span>
+                </h5>
+                <button
+                  class="btn p-1"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span class="fas fa-times fs-9"></span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="card h-100 border-0">
+                  <div
+                    class="card-body d-flex flex-column justify-content-between pb-3"
+                  >
+                    <div
+                      class="row align-items-center g-5 mb-4 text-center text-sm-start"
+                    >
+                      <div class="col-12 col-sm-auto mt-0">
+                        <div class="avatar avatar-5xl">
+                          <img
+                            id="student-image"
+                            class="rounded-circle"
+                            src=""
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-auto mt-0">
+                        <h3 id="student-name">Student Name</h3>
+                        <p class="text-body-secondary mb-0 fs-9">
+                          <span class="fw-bold"> Age :</span>
+                          <span id="student-age">0</span>
+                        </p>
+                        <p class="text-body-secondary mb-0 fs-9">
+                          <span class="fw-bold"> Gender :</span>
+                          <span id="student-gender text-capitalize">Male</span>
+                        </p>
+                        <p class="text-body-secondary mb-0 fs-9">
+                          <span class="fw-bold"> GPA :</span>
+                          <span id="student-gpa">0.0</span>
+                        </p>
+                      </div>
+                    </div>
+                    <!-- <p>Courses: <span id="student-courses">0</span></p> -->
+                    <div class="info-wrap d-flex justify-content-between">
+                      <div class="info-left">
+                        <h5 class="text-body-secondary">Address</h5>
+                        <p
+                          id="student-address"
+                          class="text-body-secondary fs-9"
+                        ></p>
+                        <h5 class="text-body-secondary">Courses:</h5>
+                        <a class="text-body-secondary fs-9"
+                          ><span id="student-courses"></span
+                        ></a>
+                      </div>
+                      <div class="info-right">
+                        <h5 class="text-body-secondary">Email</h5>
+                        <p>
+                          <a id="student-email" class="fs-9 text-capitalize"
+                            >email@example.com</a
+                          >
+                        </p>
+                        <h5
+                          class="text-body-secondary"
+                          style="margin-top: 1.9rem"
+                        >
+                          Phone
+                        </h5>
+                        <a id="student-phone" class="text-body-secondary fs-9"
+                          >+1234567890</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="editStudentModal"
+          tabindex="-1"
+          aria-labelledby="editStudentModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title" id="editStudentModalLabel">
+                  Edit Student
+                </h5>
+                <button
+                  class="btn p-1"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span class="fas fa-times fs-9"></span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="edit-student-form">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <div class="form-floating">
+                        <input
+                          class="form-control"
+                          id="editStudentName"
+                          type="text"
+                          placeholder="Name"
+                        />
+                        <label for="editStudentName">Name</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <div class="form-floating">
+                        <input
+                          class="form-control"
+                          id="editStudentAge"
+                          type="number"
+                          placeholder="Age"
+                        />
+                        <label for="editStudentAge">Age</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <div class="form-floating">
+                        <input
+                          class="form-control"
+                          id="editStudentEmail"
+                          type="email"
+                          placeholder="Email"
+                        />
+                        <label for="editStudentEmail">Email</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <div class="form-floating">
+                        <input
+                          class="form-control"
+                          id="editStudentPhone"
+                          type="text"
+                          placeholder="Phone"
+                        />
+                        <label for="editStudentPhone">Phone</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <div class="form-floating">
+                        <input
+                          class="form-control"
+                          id="editStudentAddress"
+                          type="text"
+                          placeholder="Address"
+                        />
+                        <label for="editStudentAddress">Address</label>
+                      </div>
+                    </div>
+                    <div class="col-12 mt-lg-1">
+                      <label class="form-label ps-0" for="inputName"
+                        >Gender</label
+                      >
+                      <div class="form-group">
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            id="male"
+                            type="radio"
+                            name="editStudentMode"
+                            value="online"
+                          />
+                          <label class="form-check-label" for="male"
+                            >Male</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            id="female"
+                            type="radio"
+                            name="editStudentMode"
+                            value="offline"
+                          />
+                          <label class="form-check-label" for="female"
+                            >Female</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input"
+                            id="other"
+                            type="radio"
+                            name="editStudentMode"
+                            value="both"
+                          />
+                          <label class="form-check-label" for="other"
+                            >Other</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <div class="form-floating">
+                        <input
+                          class="form-control"
+                          id="editStudentGPA"
+                          type="number"
+                          step="0.1"
+                          placeholder="GPA"
+                        />
+                        <label for="editStudentGPA">GPA</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-12 mt-md-0 mt-lg-1">
+                      <label class="form-label ps-0" for="inputName"
+                        >Upload Image</label
+                      >
+                      <div class="">
+                        <input
+                          class="form-control"
+                          id="editStudentImage"
+                          type="file"
+                          placeholder="Image URL"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 text-end">
+                    <button
+                      id="save-student"
+                      type="submit"
+                      class="btn btn-primary"
+                    >
+                      Save Changes
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="deleteConfirmationModal"
+          tabindex="-1"
+          aria-labelledby="deleteConfirmationModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">
+                  Confirm Deletion
+                </h5>
+                <button
+                  class="btn p-1"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span class="fas fa-times fs-9"></span>
+                </button>
+              </div>
+              <div class="modal-body text-center">
+                <p>Are you sure you want to delete this student?</p>
+                <p class="text-body-secondary">This action cannot be undone.</p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button
+                  id="confirmDelete"
+                  class="btn btn-danger"
+                  type="button"
+                  data-student-id="1"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        var navbarTopStyle = window.config.config.phoenixNavbarTopStyle;
+        var navbarTop = document.querySelector('.navbar-top');
+        if (navbarTopStyle === 'darker') {
+          navbarTop.setAttribute('data-navbar-appearance', 'darker');
+        }
+
+        var navbarVerticalStyle =
+          window.config.config.phoenixNavbarVerticalStyle;
+        var navbarVertical = document.querySelector('.navbar-vertical');
+        if (navbarVertical && navbarVerticalStyle === 'darker') {
+          navbarVertical.setAttribute('data-navbar-appearance', 'darker');
+        }
+      </script>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+    <div
+      class="offcanvas offcanvas-end settings-panel border-0"
+      id="settings-offcanvas"
+      tabindex="-1"
+      aria-labelledby="settings-offcanvas"
+    >
+      <div
+        class="offcanvas-header align-items-start border-bottom flex-column border-translucent"
+      >
+        <div
+          class="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start"
+        >
+          <div>
+            <h5 class="mb-2 me-2 lh-sm">
+              <span class="fas fa-palette me-2 fs-8"></span>Theme Customizer
+            </h5>
+            <p class="mb-0 fs-9">
+              Explore different styles according to your preferences
+            </p>
+          </div>
+          <button
+            class="btn p-1 fw-bolder"
+            type="button"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            <span class="fas fa-times fs-8"> </span>
+          </button>
+        </div>
+        <button
+          class="btn btn-phoenix-secondary w-100"
+          data-theme-control="reset"
+        >
+          <span class="fas fa-arrows-rotate me-2 fs-10"></span>Reset to default
+        </button>
+      </div>
+      <div class="offcanvas-body scrollbar px-card" id="themeController">
+        <div class="setting-panel-item mt-0">
+          <h5 class="setting-panel-item-title">Color Scheme</h5>
+          <div class="row gx-2">
+            <div class="col-4">
+              <input
+                class="btn-check"
+                id="themeSwitcherLight"
+                name="theme-color"
+                type="radio"
+                value="light"
+                data-theme-control="phoenixTheme"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="themeSwitcherLight"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype mb-0"
+                    src="assets/img/generic/default-light.png"
+                    alt="" /></span
+                ><span class="label-text">Light</span></label
+              >
+            </div>
+            <div class="col-4">
+              <input
+                class="btn-check"
+                id="themeSwitcherDark"
+                name="theme-color"
+                type="radio"
+                value="dark"
+                data-theme-control="phoenixTheme"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="themeSwitcherDark"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype mb-0"
+                    src="assets/img/generic/default-dark.png"
+                    alt="" /></span
+                ><span class="label-text"> Dark</span></label
+              >
+            </div>
+            <div class="col-4">
+              <input
+                class="btn-check"
+                id="themeSwitcherAuto"
+                name="theme-color"
+                type="radio"
+                value="auto"
+                data-theme-control="phoenixTheme"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="themeSwitcherAuto"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype mb-0"
+                    src="assets/img/generic/auto.png"
+                    alt="" /></span
+                ><span class="label-text"> Auto</span></label
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis"
+        >
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="setting-panel-item-title mb-1">RTL</h5>
+            <div class="form-check form-switch mb-0">
+              <input
+                class="form-check-input ms-auto"
+                type="checkbox"
+                data-theme-control="phoenixIsRTL"
+              />
+            </div>
+          </div>
+          <p class="mb-0 text-body-tertiary">Change text direction</p>
+        </div>
+        <div
+          class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis"
+        >
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="setting-panel-item-title mb-1">Support Chat</h5>
+            <div class="form-check form-switch mb-0">
+              <input
+                class="form-check-input ms-auto"
+                type="checkbox"
+                data-theme-control="phoenixSupportChat"
+              />
+            </div>
+          </div>
+          <p class="mb-0 text-body-tertiary">Toggle support chat</p>
+        </div>
+        <div class="setting-panel-item">
+          <h5 class="setting-panel-item-title">Navigation Type</h5>
+          <div class="row gx-2">
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarPositionVertical"
+                name="navigation-type"
+                type="radio"
+                value="vertical"
+                data-theme-control="phoenixNavbarPosition"
+                data-page-url="documentation/layouts/vertical-navbar.html"
+                disabled="disabled"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarPositionVertical"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none"
+                    src="assets/img/generic/default-light.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none"
+                    src="assets/img/generic/default-dark.png"
+                    alt="" /></span
+                ><span class="label-text">Vertical</span></label
+              >
+            </div>
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarPositionHorizontal"
+                name="navigation-type"
+                type="radio"
+                value="horizontal"
+                data-theme-control="phoenixNavbarPosition"
+                data-page-url="documentation/layouts/horizontal-navbar.html"
+                disabled="disabled"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarPositionHorizontal"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none"
+                    src="assets/img/generic/top-default.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none"
+                    src="assets/img/generic/top-default-dark.png"
+                    alt="" /></span
+                ><span class="label-text"> Horizontal</span></label
+              >
+            </div>
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarPositionCombo"
+                name="navigation-type"
+                type="radio"
+                value="combo"
+                data-theme-control="phoenixNavbarPosition"
+                disabled="disabled"
+                data-page-url="documentation/layouts/combo-navbar.html"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarPositionCombo"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none"
+                    src="assets/img/generic/nav-combo-light.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none"
+                    src="assets/img/generic/nav-combo-dark.png"
+                    alt="" /></span
+                ><span class="label-text"> Combo</span></label
+              >
+            </div>
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarPositionTopDouble"
+                name="navigation-type"
+                type="radio"
+                value="dual-nav"
+                data-theme-control="phoenixNavbarPosition"
+                disabled="disabled"
+                data-page-url="documentation/layouts/dual-nav.html"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarPositionTopDouble"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none"
+                    src="assets/img/generic/dual-light.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none"
+                    src="assets/img/generic/dual-dark.png"
+                    alt="" /></span
+                ><span class="label-text"> Dual nav</span></label
+              >
+            </div>
+          </div>
+          <p class="text-warning-dark font-medium">
+            <span
+              class="fa-solid fa-triangle-exclamation me-2 text-warning"
+            ></span
+            >You can't update navigation type in this page
+          </p>
+        </div>
+        <div class="setting-panel-item">
+          <h5 class="setting-panel-item-title">Vertical Navbar Appearance</h5>
+          <div class="row gx-2">
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbar-style-default"
+                type="radio"
+                name="config.name"
+                value="default"
+                data-theme-control="phoenixNavbarVerticalStyle"
+              />
+              <label
+                class="btn d-block w-100 btn-navbar-style fs-9"
+                for="navbar-style-default"
+              >
+                <img
+                  class="img-fluid img-prototype d-dark-none"
+                  src="assets/img/generic/default-light.png"
+                  alt=""
+                /><img
+                  class="img-fluid img-prototype d-light-none"
+                  src="assets/img/generic/default-dark.png"
+                  alt=""
+                /><span class="label-text d-dark-none"> Default</span
+                ><span class="label-text d-light-none">Default</span></label
+              >
+            </div>
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbar-style-dark"
+                type="radio"
+                name="config.name"
+                value="darker"
+                data-theme-control="phoenixNavbarVerticalStyle"
+              />
+              <label
+                class="btn d-block w-100 btn-navbar-style fs-9"
+                for="navbar-style-dark"
+              >
+                <img
+                  class="img-fluid img-prototype d-dark-none"
+                  src="assets/img/generic/vertical-darker.png"
+                  alt=""
+                /><img
+                  class="img-fluid img-prototype d-light-none"
+                  src="assets/img/generic/vertical-lighter.png"
+                  alt=""
+                /><span class="label-text d-dark-none"> Darker</span
+                ><span class="label-text d-light-none">Lighter</span></label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="setting-panel-item">
+          <h5 class="setting-panel-item-title">Horizontal Navbar Shape</h5>
+          <div class="row gx-2">
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarShapeDefault"
+                name="navbar-shape"
+                type="radio"
+                value="default"
+                data-theme-control="phoenixNavbarTopShape"
+                data-page-url="documentation/layouts/horizontal-navbar.html"
+                disabled="disabled"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarShapeDefault"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none mb-0"
+                    src="assets/img/generic/top-default.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none mb-0"
+                    src="assets/img/generic/top-default-dark.png"
+                    alt="" /></span
+                ><span class="label-text">Default</span></label
+              >
+            </div>
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarShapeSlim"
+                name="navbar-shape"
+                type="radio"
+                value="slim"
+                data-theme-control="phoenixNavbarTopShape"
+                data-page-url="documentation/layouts/horizontal-navbar.html#horizontal-navbar-slim"
+                disabled="disabled"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarShapeSlim"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none mb-0"
+                    src="assets/img/generic/top-slim.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none mb-0"
+                    src="assets/img/generic/top-slim-dark.png"
+                    alt="" /></span
+                ><span class="label-text"> Slim</span></label
+              >
+            </div>
+          </div>
+          <p class="text-warning-dark font-medium">
+            <span
+              class="fa-solid fa-triangle-exclamation me-2 text-warning"
+            ></span
+            >You can't update horizontal navbar shape in this page
+          </p>
+        </div>
+        <div class="setting-panel-item">
+          <h5 class="setting-panel-item-title">Horizontal Navbar Appearance</h5>
+          <div class="row gx-2">
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarTopDefault"
+                name="navbar-top-style"
+                type="radio"
+                value="default"
+                data-theme-control="phoenixNavbarTopStyle"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarTopDefault"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none mb-0"
+                    src="assets/img/generic/top-default.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none mb-0"
+                    src="assets/img/generic/top-style-darker.png"
+                    alt="" /></span
+                ><span class="label-text">Default</span></label
+              >
+            </div>
+            <div class="col-6">
+              <input
+                class="btn-check"
+                id="navbarTopDarker"
+                name="navbar-top-style"
+                type="radio"
+                value="darker"
+                data-theme-control="phoenixNavbarTopStyle"
+              />
+              <label
+                class="btn d-inline-block btn-navbar-style fs-9"
+                for="navbarTopDarker"
+              >
+                <span class="mb-2 rounded d-block"
+                  ><img
+                    class="img-fluid img-prototype d-dark-none mb-0"
+                    src="assets/img/generic/navbar-top-style-light.png"
+                    alt="" /><img
+                    class="img-fluid img-prototype d-light-none mb-0"
+                    src="assets/img/generic/top-style-lighter.png"
+                    alt="" /></span
+                ><span class="label-text d-dark-none">Darker</span
+                ><span class="label-text d-light-none">Lighter</span></label
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          class="bun btn-primary d-grid mb-3 text-white mt-5 btn btn-primary"
+          href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
+          target="_blank"
+          >Purchase template</a
+        >
+      </div>
+    </div>
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/popper/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/feather-icons/feather.min.js"></script>
+    <script src="assets/js/phoenix.js"></script>   
+    <script>
+      $(document).ready(function () {
+        let studentsData = []; // To store the fetched student data
+
+        // Fetch and store data when the page loads
+        $.ajax({
+          url: 'https://randomuser.me/api/?results=10',
+          method: 'GET',
+          success: function (data) {
+            studentsData = data.results; // Store the data in the variable
+            const $studentsTableBody = $('#students-table-body');
+            $studentsTableBody.empty(); // Clear the table body
+
+            studentsData.forEach((student, index) => {
+              const address = `${student.location.city}, ${student.location.country}`;
+              const studentRow = `
+                <tr data-student-id="${
+                  index + 1
+                }" class="hover-actions-trigger btn-reveal-trigger position-static">
+                    <td class="fs-9 align-middle ps-0 py-3">
+                        <div class="form-check mb-0 fs-8">
+                            <input class="form-check-input" type="checkbox" data-bulk-select-row='{
+                                "student": {"avatar": "${
+                                  student.picture.thumbnail
+                                }", "name": "${student.name.first} ${
+                student.name.last
+              }"},
+                                "email": "${student.email}",
+                                "city": "${student.location.city}",
+                                "age": "${student.dob.age}",
+                                "gender": "${student.gender}",
+                                "address": "${address}",
+                                "phone": "${student.phone}"
+                            }' />
+                        </div>
+                    </td>
+                    <td class="age align-middle text-center white-space-nowrap fw-bold">${
+                      index + 1
+                    }</td>
+                    <td class="student align-middle white-space-nowrap pe-5">
+                        <a class="d-flex align-items-center text-body-emphasis" href="#">
+                            <div class="avatar avatar-m">
+                                <img class="rounded-circle" src="${
+                                  student.picture.thumbnail
+                                }" alt="" />
+                            </div>
+                            <p class="mb-0 ms-3 text-body-emphasis fw-bold">${
+                              student.name.first
+                            } ${student.name.last}</p>
+                        </a>
+                    </td>
+                    <td class="age align-middle text-center white-space-nowrap fw-bold">${
+                      student.dob.age
+                    }</td>
+                    <td class="gender align-middle text-center white-space-nowrap text-capitalize">${
+                      student.gender
+                    }</td>
+                    <td class="address align-middle ps-7 white-space-nowrap">${address}</td>
+                    <td class="email align-middle pe-5 white-space-nowrap">
+                        <a class="fw-semibold text-capitalize" href="mailto:${
+                          student.email
+                        }">${student.email}</a>
+                    </td>
+                    <td class="phone align-middle text-end white-space-nowrap">${
+                      student.phone
+                    }</td>
+                    <td class="align-middle text-end pe-0 ps-4 white-space-nowrap">
+                        <div class="btn-reveal-trigger position-static">
+                            <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fas fa-ellipsis-h fs-10"></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end py-2">
+                                <a id="view-student" data-student-id="${
+                                  index + 1
+                                }" class="dropdown-item text-primary view-student" href="#">View</a>
+                                <a id="edit-student" data-student-id="${
+                                  index + 1
+                                }" class="dropdown-item text-primary edit-student" data-bs-toggle="modal" data-bs-target="#editStudentModal" href="#">Edit</a>
+                                <div class="dropdown-divider"></div>
+                                <a id="delete-student" data-student-id="${
+                                  index + 1
+                                }" class="dropdown-item text-danger delete-student" href="#">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            `;
+              $studentsTableBody.append(studentRow);
+            });
+          },
+          error: function () {
+            alert('Failed to load data');
+          }
+        });
+
+        // Event handler for the 'view-student' button
+        $(document).on('click', '#view-student', function (e) {
+          e.preventDefault();
+
+          // Get student ID from data attribute
+          var studentId = $(this).data('student-id');
+
+          // Fetch the student data from the stored array
+          const student = studentsData[studentId - 1];
+
+          // Populate modal with student data
+          $('#rollNum').text(studentId); // Using the index as the roll number
+          $('#student-image').attr('src', student.picture.large);
+          $('#student-name').text(`${student.name.first} ${student.name.last}`);
+          $('#student-age').text(student.dob.age);
+          $('#student-gender').text(student.gender);
+          $('#student-gpa').text('8.1/10');
+          $('#student-courses').text('Computer Science, Electronics');
+          $('#student-address').html(
+            `${student.location.street.name} ${student.location.street.number}<br>${student.location.city}, ${student.location.postcode}, ${student.location.country}`
+          );
+          $('#student-email')
+            .attr('href', `mailto:${student.email}`)
+            .text(student.email);
+          $('#student-phone')
+            .attr('href', `tel:${student.phone}`)
+            .text(student.phone);
+
+          // Show the modal
+          $('#studentModal').modal('show');
+        });
+
+        // Event handler for the 'edit-student' button
+        $(document).on('click', '#edit-student', function (e) {
+          e.preventDefault();
+
+          // Get student ID from data attribute
+          var studentId = $(this).data('student-id');
+
+          // Fetch the student data from the stored array
+          const student = studentsData[studentId - 1]; // Use the stored data
+
+          // Populate the edit modal with student data
+          $('h5#editStudentModalLabel').text('Edit Student');
+          $('#editStudentName').val(
+            `${student.name.first} ${student.name.last}`
+          );
+          $('#editStudentAge').val(student.dob.age);
+          $('#editStudentEmail').val(student.email);
+          $('#editStudentPhone').val(student.phone);
+          $('#editStudentAddress').val(
+            `${student.location.street.name} ${student.location.street.number}, ${student.location.city}, ${student.location.state}, ${student.location.country}, ${student.location.postcode}`
+          );
+
+          // Set gender radio buttons
+          if (student.gender === 'male') {
+            $('#male').prop('checked', true);
+          } else if (student.gender === 'female') {
+            $('#female').prop('checked', true);
+          } else {
+            $('#other').prop('checked', true);
+          }
+
+          // For GPA and Image, provide defaults or handle according to your requirements
+          $('#editStudentGPA').val('8.1'); // Placeholder, adjust based on actual data
+          $('#editStudentImage').val(student.picture.large || ''); // Placeholder, adjust as needed
+
+          // Show the modal
+          $('#editStudentModal').modal('show');
+        });
+
+        $(document).on('click', '#save-student', function (e) {
+          e.preventDefault();
+          $('#editStudentModal').modal('hide');
+        });
+
+        // Event handler for the 'add-student' button
+        $(document).on('click', '#add-student', function () {
+          // Clear the form fields
+          $('#edit-student-form')[0].reset(); // Reset form fields
+
+          $('h5#editStudentModalLabel').text('Add Student');
+          // Set default values if needed (optional)
+          $('#editStudentName').val('');
+          $('#editStudentAge').val('');
+          $('#editStudentEmail').val('');
+          $('#editStudentPhone').val('');
+          $('#editStudentAddress').val('');
+          $('#editStudentGPA').val('');
+          $('#editStudentImage').val(''); // Clear file input
+
+          // Uncheck all radio buttons
+          $('input[name="editStudentMode"]').prop('checked', false);
+
+          // Show the modal
+          $('#editStudentModal').modal('show');
+        });
+
+        // Show the delete confirmation modal and store the ID of the student to delete
+        $(document).on('click', '.delete-student', function () {
+          let studentId = $(this).attr('data-student-id'); // Get the student ID from the button's data attribute
+          $('#deleteConfirmationModal button#confirmDelete').attr(
+            'data-student-id',
+            studentId
+          );
+          $('#deleteConfirmationModal').modal('show');
+        });
+
+        // Confirm deletion
+        $('#confirmDelete').on('click', function () {
+          let studentId = $(this).attr('data-student-id'); // Get the student ID from the button
+          console.log(this);
+          console.log(studentId);
+
+          // Use a template literal or string concatenation correctly
+          $('tr[data-student-id="' + studentId + '"]').remove(); // Remove the row with the matching student ID
+
+          $('#deleteConfirmationModal').modal('hide'); // Hide the delete confirmation modal
+        });
+      });
+    </script>
+  </body>
+</html>
